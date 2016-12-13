@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import smalluml.Attribute;
 import smalluml.Cardinality;
 import smalluml.Enumeration;
+import smalluml.EnumerationElement;
 import smalluml.Method;
 import smalluml.Real;
 import smalluml.Relation;
 import smalluml.SmallumlFactory;
 import smalluml.SmallumlPackage;
-import smalluml.Type;
 import smalluml.UnlimitedNatural;
 
 /**
@@ -65,7 +65,6 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case SmallumlPackage.TYPE: return createType();
 			case SmallumlPackage.BOOLEAN: return createBoolean();
 			case SmallumlPackage.REAL: return createReal();
 			case SmallumlPackage.INTEGER: return createInteger();
@@ -78,19 +77,10 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 			case SmallumlPackage.RELATION: return createRelation();
 			case SmallumlPackage.CARDINALITY: return createCardinality();
 			case SmallumlPackage.PACKAGE: return createPackage();
+			case SmallumlPackage.ENUMERATION_ELEMENT: return createEnumerationElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Type createType() {
-		TypeImpl type = new TypeImpl();
-		return type;
 	}
 
 	/**
@@ -211,6 +201,16 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 	public smalluml.Package createPackage() {
 		PackageImpl package_ = new PackageImpl();
 		return package_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EnumerationElement createEnumerationElement() {
+		EnumerationElementImpl enumerationElement = new EnumerationElementImpl();
+		return enumerationElement;
 	}
 
 	/**

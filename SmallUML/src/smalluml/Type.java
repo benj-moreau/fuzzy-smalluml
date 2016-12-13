@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see smalluml.SmallumlPackage#getType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Type extends EObject {

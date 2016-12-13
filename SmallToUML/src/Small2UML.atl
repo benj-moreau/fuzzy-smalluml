@@ -1,6 +1,131 @@
--- @path MM=/SmallUML/model/smalluml.ecore
--- @path MM1=/UML/model/uml.ecore
+-- @path small=/SmallUML/model/smalluml.ecore
+-- @path uml=/UML/model/uml.ecore
 
 module Small2UML;
-create OUT : MM1 from IN : MM;
+create OUT : uml from IN : small;
 
+rule package {
+	from
+		s : small!Package
+	to 
+		t : uml!Package (
+			name <- 'Mainpackage',
+			packagedElement <- s.class.union(s.relation)
+		)
+}
+
+lazy rule smallAttributes2Property {
+	from s : small!Attribute
+	to t : uml!Property (
+		name <- s.name,
+		type <- s.typedValue
+	)
+}
+
+rule smallMethods2Operation {
+	from s : small!Method
+	to t : uml!Operation (
+		name <- s.name,
+		type <- s.returnTypedValue,
+		ownedParameter <- s.parameters -> collect(parameter | thisModule.Parameter2Attribute(parameter))
+	)
+}
+
+lazy rule Parameter2Attribute {
+	from
+		s : small!Attribute
+	to 
+		t : uml!Parameter (
+			name <- s.name,
+			type <- s.typedValue
+		)
+}
+
+rule SmallClass2Class {
+	from s : small!Class
+	to t : uml!Class (
+		isAbstract <- s.isAbstract,
+		name <- s.name,
+		ownedAttribute <- s.attributes -> collect(attribute | thisModule.smallAttributes2Property(attribute)),
+		ownedOperation <- s.methods,
+		superClass <- s.parents
+	)
+}
+
+lazy rule RelationFrom2Property {
+	from s : small!Relation
+	to t : uml!Property (
+		name <- s.from.name,
+		lower <- s.cardinality.lowerBound,
+		upper <- s.cardinality.upperBound
+	)
+}
+
+lazy rule SmallClassTo2Property {
+	from s : small!Class
+	to t : uml!Property (
+		name <- s.name,
+		lower <- 1,
+		upper <- 1
+	)
+}
+
+rule Relation2Association {
+	from s : small!Relation
+	to t : uml!Association (
+		name <- s.name,
+		memberEnd <- Set{thisModule.RelationFrom2Property(s), thisModule.SmallClassTo2Property(s.to)}
+	)
+}
+
+-- Type transformation.
+
+lazy rule EnumerationElement2Property {
+	from s : small!EnumerationElement
+	to t : uml!Property (
+		name <- s.value
+	)
+}
+
+rule SmallEnumeration2Enumeration {
+	from s : small!Enumeration
+	to t : uml!Enumeration (
+		name <- s.name,
+		ownedAttribute <- s.value -> collect(element | thisModule.EnumerationElement2Property(element))
+	)
+}
+
+rule TypeString2PrimitiveType {
+	from s : small!"String"
+	to t : uml!PrimitiveType (
+		name <- 'String'
+	)
+}
+
+rule TypeInt2PrimitiveType {
+	from s : small!"Integer"
+	to t : uml!PrimitiveType (
+		name <- 'Integer'	
+	)
+}
+
+rule TypeUnlimitedNatural2PrimitiveType {
+	from s : small!"UnlimitedNatural"
+	to t : uml!PrimitiveType (
+		name <- 'UnlimitedNatural'	
+	)
+}
+
+rule TypeReal2PrimitiveType {
+	from s : small!"Real"
+	to t : uml!PrimitiveType (
+		name <- 'Real'	
+	)
+}
+
+rule TypeBoolean2PrimitiveType {
+	from s : small!"Boolean"
+	to t : uml!PrimitiveType (
+		name <- 'Boolean'	
+	)
+}

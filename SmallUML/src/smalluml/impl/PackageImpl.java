@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import smalluml.Relation;
 import smalluml.SmallumlPackage;
+import smalluml.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +30,7 @@ import smalluml.SmallumlPackage;
  * <ul>
  *   <li>{@link smalluml.impl.PackageImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link smalluml.impl.PackageImpl#getRelation <em>Relation</em>}</li>
+ *   <li>{@link smalluml.impl.PackageImpl#getTypes <em>Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +55,16 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements smallum
 	 * @ordered
 	 */
 	protected EList<Relation> relation;
+
+	/**
+	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Type> types;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,6 +114,18 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements smallum
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Type> getTypes() {
+		if (types == null) {
+			types = new EObjectContainmentEList<Type>(Type.class, this, SmallumlPackage.PACKAGE__TYPES);
+		}
+		return types;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -109,6 +133,8 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements smallum
 				return ((InternalEList<?>)getClass_()).basicRemove(otherEnd, msgs);
 			case SmallumlPackage.PACKAGE__RELATION:
 				return ((InternalEList<?>)getRelation()).basicRemove(otherEnd, msgs);
+			case SmallumlPackage.PACKAGE__TYPES:
+				return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -125,6 +151,8 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements smallum
 				return getClass_();
 			case SmallumlPackage.PACKAGE__RELATION:
 				return getRelation();
+			case SmallumlPackage.PACKAGE__TYPES:
+				return getTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,6 +174,10 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements smallum
 				getRelation().clear();
 				getRelation().addAll((Collection<? extends Relation>)newValue);
 				return;
+			case SmallumlPackage.PACKAGE__TYPES:
+				getTypes().clear();
+				getTypes().addAll((Collection<? extends Type>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -164,6 +196,9 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements smallum
 			case SmallumlPackage.PACKAGE__RELATION:
 				getRelation().clear();
 				return;
+			case SmallumlPackage.PACKAGE__TYPES:
+				getTypes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,6 +215,8 @@ public class PackageImpl extends MinimalEObjectImpl.Container implements smallum
 				return class_ != null && !class_.isEmpty();
 			case SmallumlPackage.PACKAGE__RELATION:
 				return relation != null && !relation.isEmpty();
+			case SmallumlPackage.PACKAGE__TYPES:
+				return types != null && !types.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

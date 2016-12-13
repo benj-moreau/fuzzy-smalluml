@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Package name="Mainpackage">
+    <packagedElement xsi:type="uml:Class" name="Animal" isAbstract="true">
+      <ownedAttribute name="nom" type="/2"/>
+      <ownedAttribute name="Etat" type="/1"/>
+      <ownedOperation name="crier">
+        <ownedParameter type="/2" direction="return"/>
+        <ownedParameter name="voix" type="/2"/>
+      </ownedOperation>
+      <ownedOperation name="marcher">
+        <ownedParameter type="/3" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Chien">
+      <generalization general="/0/Animal"/>
+      <ownedOperation name="ramenerBalle">
+        <ownedParameter type="/3" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Personne">
+      <ownedAttribute name="nom" type="/2"/>
+      <ownedOperation name="donnerAManger">
+        <ownedParameter type="/3" direction="return"/>
+        <ownedParameter name="nourriture" type="/2"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Chat">
+      <generalization general="/0/Animal"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="proprietaire" memberEnd="/5 /4"/>
+  </uml:Package>
+  <uml:Enumeration name="Etat">
+    <ownedAttribute name="Vivant"/>
+    <ownedAttribute name="Mort"/>
+  </uml:Enumeration>
+  <uml:PrimitiveType name="String"/>
+  <uml:PrimitiveType name="Boolean"/>
+  <uml:Property name="Personne" association="/0/proprietaire">
+    <lowerValue xsi:type="uml:LiteralInteger"/>
+    <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+  </uml:Property>
+  <uml:Property name="Chien" association="/0/proprietaire">
+    <lowerValue xsi:type="uml:LiteralInteger" value="1"/>
+    <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+  </uml:Property>
+</xmi:XMI>

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import smalluml.Attribute;
 import smalluml.Cardinality;
 import smalluml.Enumeration;
+import smalluml.EnumerationElement;
 import smalluml.Method;
 import smalluml.NamedElement;
 import smalluml.Real;
@@ -131,6 +132,10 @@ public class SmallumlAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePackage(smalluml.Package object) {
 				return createPackageAdapter();
+			}
+			@Override
+			public Adapter caseEnumerationElement(EnumerationElement object) {
+				return createEnumerationElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -345,6 +350,20 @@ public class SmallumlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smalluml.EnumerationElement <em>Enumeration Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smalluml.EnumerationElement
+	 * @generated
+	 */
+	public Adapter createEnumerationElementAdapter() {
 		return null;
 	}
 

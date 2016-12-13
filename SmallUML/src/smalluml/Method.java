@@ -13,8 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link smalluml.Method#getReturnTypedValue <em>Return Typed Value</em>}</li>
  *   <li>{@link smalluml.Method#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link smalluml.Method#getReturnTypedValue <em>Return Typed Value</em>}</li>
  * </ul>
  *
  * @see smalluml.SmallumlPackage#getMethod()
@@ -23,26 +23,26 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Method extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Return Typed Value</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Return Typed Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Return Typed Value</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Return Typed Value</em>' containment reference.
+	 * @return the value of the '<em>Return Typed Value</em>' reference.
 	 * @see #setReturnTypedValue(Type)
 	 * @see smalluml.SmallumlPackage#getMethod_ReturnTypedValue()
-	 * @model containment="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Type getReturnTypedValue();
 
 	/**
-	 * Sets the value of the '{@link smalluml.Method#getReturnTypedValue <em>Return Typed Value</em>}' containment reference.
+	 * Sets the value of the '{@link smalluml.Method#getReturnTypedValue <em>Return Typed Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Return Typed Value</em>' containment reference.
+	 * @param value the new value of the '<em>Return Typed Value</em>' reference.
 	 * @see #getReturnTypedValue()
 	 * @generated
 	 */

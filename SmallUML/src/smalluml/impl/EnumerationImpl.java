@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import smalluml.Enumeration;
+import smalluml.EnumerationElement;
 import smalluml.SmallumlPackage;
 
 /**
@@ -39,7 +40,7 @@ public class EnumerationImpl extends NamedElementImpl implements Enumeration {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<smalluml.String> value;
+	protected EList<EnumerationElement> value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,9 +66,9 @@ public class EnumerationImpl extends NamedElementImpl implements Enumeration {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<smalluml.String> getValue() {
+	public EList<EnumerationElement> getValue() {
 		if (value == null) {
-			value = new EObjectContainmentEList<smalluml.String>(smalluml.String.class, this, SmallumlPackage.ENUMERATION__VALUE);
+			value = new EObjectContainmentEList<EnumerationElement>(EnumerationElement.class, this, SmallumlPackage.ENUMERATION__VALUE);
 		}
 		return value;
 	}
@@ -111,7 +112,7 @@ public class EnumerationImpl extends NamedElementImpl implements Enumeration {
 		switch (featureID) {
 			case SmallumlPackage.ENUMERATION__VALUE:
 				getValue().clear();
-				getValue().addAll((Collection<? extends smalluml.String>)newValue);
+				getValue().addAll((Collection<? extends EnumerationElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

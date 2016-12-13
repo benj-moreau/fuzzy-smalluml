@@ -16,7 +16,7 @@ import smalluml.Type;
  *
  * @generated
  */
-public class TypeImpl extends MinimalEObjectImpl.Container implements Type {
+public abstract class TypeImpl extends MinimalEObjectImpl.Container implements Type {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

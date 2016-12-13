@@ -402,7 +402,7 @@ public interface SmallumlPackage extends EPackage {
 	int ATTRIBUTE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Typed Value</b></em>' containment reference.
+	 * The feature id for the '<em><b>Typed Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -448,22 +448,22 @@ public interface SmallumlPackage extends EPackage {
 	int METHOD__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Return Typed Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int METHOD__RETURN_TYPED_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__PARAMETERS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int METHOD__PARAMETERS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Return Typed Value</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHOD__RETURN_TYPED_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Method</em>' class.
@@ -623,13 +623,22 @@ public interface SmallumlPackage extends EPackage {
 	int PACKAGE__RELATION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__TYPES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = 2;
+	int PACKAGE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Package</em>' class.
@@ -639,6 +648,44 @@ public interface SmallumlPackage extends EPackage {
 	 * @ordered
 	 */
 	int PACKAGE_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link smalluml.impl.EnumerationElementImpl <em>Enumeration Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smalluml.impl.EnumerationElementImpl
+	 * @see smalluml.impl.SmallumlPackageImpl#getEnumerationElement()
+	 * @generated
+	 */
+	int ENUMERATION_ELEMENT = 14;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_ELEMENT__VALUE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Enumeration Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Enumeration Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENUMERATION_ELEMENT_OPERATION_COUNT = 0;
 
 
 	/**
@@ -808,10 +855,10 @@ public interface SmallumlPackage extends EPackage {
 	EClass getAttribute();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link smalluml.Attribute#getTypedValue <em>Typed Value</em>}'.
+	 * Returns the meta object for the reference '{@link smalluml.Attribute#getTypedValue <em>Typed Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Typed Value</em>'.
+	 * @return the meta object for the reference '<em>Typed Value</em>'.
 	 * @see smalluml.Attribute#getTypedValue()
 	 * @see #getAttribute()
 	 * @generated
@@ -829,10 +876,10 @@ public interface SmallumlPackage extends EPackage {
 	EClass getMethod();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link smalluml.Method#getReturnTypedValue <em>Return Typed Value</em>}'.
+	 * Returns the meta object for the reference '{@link smalluml.Method#getReturnTypedValue <em>Return Typed Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Return Typed Value</em>'.
+	 * @return the meta object for the reference '<em>Return Typed Value</em>'.
 	 * @see smalluml.Method#getReturnTypedValue()
 	 * @see #getMethod()
 	 * @generated
@@ -956,6 +1003,38 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPackage_Relation();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link smalluml.Package#getTypes <em>Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Types</em>'.
+	 * @see smalluml.Package#getTypes()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_Types();
+
+	/**
+	 * Returns the meta object for class '{@link smalluml.EnumerationElement <em>Enumeration Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Enumeration Element</em>'.
+	 * @see smalluml.EnumerationElement
+	 * @generated
+	 */
+	EClass getEnumerationElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link smalluml.EnumerationElement#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see smalluml.EnumerationElement#getValue()
+	 * @see #getEnumerationElement()
+	 * @generated
+	 */
+	EAttribute getEnumerationElement_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1129,7 +1208,7 @@ public interface SmallumlPackage extends EPackage {
 		EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Typed Value</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Typed Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1147,7 +1226,7 @@ public interface SmallumlPackage extends EPackage {
 		EClass METHOD = eINSTANCE.getMethod();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Typed Value</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Return Typed Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1247,6 +1326,32 @@ public interface SmallumlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PACKAGE__RELATION = eINSTANCE.getPackage_Relation();
+
+		/**
+		 * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__TYPES = eINSTANCE.getPackage_Types();
+
+		/**
+		 * The meta object literal for the '{@link smalluml.impl.EnumerationElementImpl <em>Enumeration Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smalluml.impl.EnumerationElementImpl
+		 * @see smalluml.impl.SmallumlPackageImpl#getEnumerationElement()
+		 * @generated
+		 */
+		EClass ENUMERATION_ELEMENT = eINSTANCE.getEnumerationElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENUMERATION_ELEMENT__VALUE = eINSTANCE.getEnumerationElement_Value();
 
 	}
 

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link smalluml.Package#getClass_ <em>Class</em>}</li>
  *   <li>{@link smalluml.Package#getRelation <em>Relation</em>}</li>
+ *   <li>{@link smalluml.Package#getTypes <em>Types</em>}</li>
  * </ul>
  *
  * @see smalluml.SmallumlPackage#getPackage()
@@ -55,5 +56,21 @@ public interface Package extends EObject {
 	 * @generated
 	 */
 	EList<Relation> getRelation();
+
+	/**
+	 * Returns the value of the '<em><b>Types</b></em>' containment reference list.
+	 * The list contents are of type {@link smalluml.Type}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Types</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Types</em>' containment reference list.
+	 * @see smalluml.SmallumlPackage#getPackage_Types()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Type> getTypes();
 
 } // Package

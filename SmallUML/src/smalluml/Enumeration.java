@@ -23,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
 public interface Enumeration extends NamedElement, Type {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' containment reference list.
-	 * The list contents are of type {@link smalluml.String}.
+	 * The list contents are of type {@link smalluml.EnumerationElement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' containment reference list isn't clear,
@@ -35,6 +35,6 @@ public interface Enumeration extends NamedElement, Type {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<smalluml.String> getValue();
+	EList<EnumerationElement> getValue();
 
 } // Enumeration

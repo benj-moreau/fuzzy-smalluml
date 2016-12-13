@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smalluml:Package
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:smalluml="http://www.univ-nantes.fr/smalluml"
+    xsi:schemaLocation="http://www.univ-nantes.fr/smalluml /SmallUML/model/smalluml.ecore"
+    xmi:id="_0">
+  <class xmi:id="_0.@class.0"
+      name="Animal"
+      isAbstract="true">
+    <attributes
+        xmi:id="_0.@class.0.@attributes.0"
+        name="nom"
+        typedValue="_0.@types.0"/>
+    <attributes
+        name="Etat"
+        typedValue="//@types.2"/>
+    <methods
+        xmi:id="_0.@class.0.@methods.0"
+        name="crier"
+        returnTypedValue="_0.@types.0">
+      <parameters
+          xmi:id="_0.@class.0.@methods.0.@parameters.0"
+          name="voix"
+          typedValue="_0.@types.0"/>
+    </methods>
+    <methods
+        xmi:id="_0.@class.0.@methods.1"
+        name="marcher"
+        returnTypedValue="_0.@types.1"/>
+  </class>
+  <class xmi:id="_0.@class.1"
+      name="Chien"
+      parents="_0.@class.0">
+    <methods
+        xmi:id="_0.@class.1.@methods.0"
+        name="ramenerBalle"
+        returnTypedValue="_0.@types.1"/>
+  </class>
+  <class xmi:id="_0.@class.3"
+      name="Personne">
+    <attributes
+        xmi:id="_0.@class.2.@attributes.0"
+        name="nom"
+        typedValue="_0.@types.0"/>
+    <methods
+        xmi:id="_0.@class.2.@methods.0"
+        name="donnerAManger"
+        returnTypedValue="_0.@types.1">
+      <parameters
+          xmi:id="_0.@class.2.@methods.0.@parameters.0"
+          name="nourriture"
+          typedValue="_0.@types.0"/>
+    </methods>
+  </class>
+  <class name="Chat"
+      parents="_0.@class.0"/>
+  <relation
+      xmi:id="_0.@relation.0"
+      name="proprietaire"
+      from="_0.@class.3"
+      to="_0.@class.1">
+    <cardinality
+        xmi:id="_0.@relation.0.@cardinality"/>
+  </relation>
+  <types xsi:type="smalluml:String"
+      xmi:id="_0.@types.0"/>
+  <types xsi:type="smalluml:Boolean"
+      xmi:id="_0.@types.1"/>
+  <types xsi:type="smalluml:Enumeration"
+      name="Etat">
+    <value value="Vivant"/>
+    <value value="Mort"/>
+  </types>
+</smalluml:Package>

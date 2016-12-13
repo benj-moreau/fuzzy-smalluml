@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import smalluml.Attribute;
 import smalluml.Cardinality;
 import smalluml.Enumeration;
+import smalluml.EnumerationElement;
 import smalluml.Method;
 import smalluml.NamedElement;
 import smalluml.Real;
@@ -167,6 +168,12 @@ public class SmallumlSwitch<T> extends Switch<T> {
 			case SmallumlPackage.PACKAGE: {
 				smalluml.Package package_ = (smalluml.Package)theEObject;
 				T result = casePackage(package_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmallumlPackage.ENUMERATION_ELEMENT: {
+				EnumerationElement enumerationElement = (EnumerationElement)theEObject;
+				T result = caseEnumerationElement(enumerationElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -381,6 +388,21 @@ public class SmallumlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePackage(smalluml.Package object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enumeration Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enumeration Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnumerationElement(EnumerationElement object) {
 		return null;
 	}
 

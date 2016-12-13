@@ -3,8 +3,6 @@
 package smalluml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -29,7 +27,7 @@ import smalluml.Type;
  */
 public class AttributeImpl extends NamedElementImpl implements Attribute {
 	/**
-	 * The cached value of the '{@link #getTypedValue() <em>Typed Value</em>}' containment reference.
+	 * The cached value of the '{@link #getTypedValue() <em>Typed Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTypedValue()
@@ -63,6 +61,14 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * @generated
 	 */
 	public Type getTypedValue() {
+		if (typedValue != null && typedValue.eIsProxy()) {
+			InternalEObject oldTypedValue = (InternalEObject)typedValue;
+			typedValue = (Type)eResolveProxy(oldTypedValue);
+			if (typedValue != oldTypedValue) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmallumlPackage.ATTRIBUTE__TYPED_VALUE, oldTypedValue, typedValue));
+			}
+		}
 		return typedValue;
 	}
 
@@ -71,14 +77,8 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTypedValue(Type newTypedValue, NotificationChain msgs) {
-		Type oldTypedValue = typedValue;
-		typedValue = newTypedValue;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmallumlPackage.ATTRIBUTE__TYPED_VALUE, oldTypedValue, newTypedValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public Type basicGetTypedValue() {
+		return typedValue;
 	}
 
 	/**
@@ -87,31 +87,10 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	 * @generated
 	 */
 	public void setTypedValue(Type newTypedValue) {
-		if (newTypedValue != typedValue) {
-			NotificationChain msgs = null;
-			if (typedValue != null)
-				msgs = ((InternalEObject)typedValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.ATTRIBUTE__TYPED_VALUE, null, msgs);
-			if (newTypedValue != null)
-				msgs = ((InternalEObject)newTypedValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmallumlPackage.ATTRIBUTE__TYPED_VALUE, null, msgs);
-			msgs = basicSetTypedValue(newTypedValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.ATTRIBUTE__TYPED_VALUE, newTypedValue, newTypedValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case SmallumlPackage.ATTRIBUTE__TYPED_VALUE:
-				return basicSetTypedValue(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		Type oldTypedValue = typedValue;
+		typedValue = newTypedValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.ATTRIBUTE__TYPED_VALUE, oldTypedValue, typedValue));
 	}
 
 	/**
@@ -123,7 +102,8 @@ public class AttributeImpl extends NamedElementImpl implements Attribute {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SmallumlPackage.ATTRIBUTE__TYPED_VALUE:
-				return getTypedValue();
+				if (resolve) return getTypedValue();
+				return basicGetTypedValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

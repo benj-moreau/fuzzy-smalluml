@@ -21,26 +21,26 @@ package smalluml;
  */
 public interface Attribute extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Typed Value</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Typed Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Typed Value</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Typed Value</em>' containment reference.
+	 * @return the value of the '<em>Typed Value</em>' reference.
 	 * @see #setTypedValue(Type)
 	 * @see smalluml.SmallumlPackage#getAttribute_TypedValue()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Type getTypedValue();
 
 	/**
-	 * Sets the value of the '{@link smalluml.Attribute#getTypedValue <em>Typed Value</em>}' containment reference.
+	 * Sets the value of the '{@link smalluml.Attribute#getTypedValue <em>Typed Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Typed Value</em>' containment reference.
+	 * @param value the new value of the '<em>Typed Value</em>' reference.
 	 * @see #getTypedValue()
 	 * @generated
 	 */

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import smalluml.Attribute;
 import smalluml.Cardinality;
 import smalluml.Enumeration;
+import smalluml.EnumerationElement;
 import smalluml.Method;
 import smalluml.NamedElement;
 import smalluml.Real;
@@ -114,6 +115,13 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * @generated
 	 */
 	private EClass packageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enumerationElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -344,7 +352,7 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * @generated
 	 */
 	public EReference getMethod_ReturnTypedValue() {
-		return (EReference)methodEClass.getEStructuralFeatures().get(0);
+		return (EReference)methodEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -353,7 +361,7 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * @generated
 	 */
 	public EReference getMethod_Parameters() {
-		return (EReference)methodEClass.getEStructuralFeatures().get(1);
+		return (EReference)methodEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -451,6 +459,33 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPackage_Types() {
+		return (EReference)packageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEnumerationElement() {
+		return enumerationElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEnumerationElement_Value() {
+		return (EAttribute)enumerationElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SmallumlFactory getSmallumlFactory() {
 		return (SmallumlFactory)getEFactoryInstance();
 	}
@@ -502,8 +537,8 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 		createEReference(attributeEClass, ATTRIBUTE__TYPED_VALUE);
 
 		methodEClass = createEClass(METHOD);
-		createEReference(methodEClass, METHOD__RETURN_TYPED_VALUE);
 		createEReference(methodEClass, METHOD__PARAMETERS);
+		createEReference(methodEClass, METHOD__RETURN_TYPED_VALUE);
 
 		relationEClass = createEClass(RELATION);
 		createEReference(relationEClass, RELATION__CARDINALITY);
@@ -517,6 +552,10 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 		packageEClass = createEClass(PACKAGE);
 		createEReference(packageEClass, PACKAGE__CLASS);
 		createEReference(packageEClass, PACKAGE__RELATION);
+		createEReference(packageEClass, PACKAGE__TYPES);
+
+		enumerationElementEClass = createEClass(ENUMERATION_ELEMENT);
+		createEAttribute(enumerationElementEClass, ENUMERATION_ELEMENT__VALUE);
 	}
 
 	/**
@@ -563,7 +602,7 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(booleanEClass, smalluml.Boolean.class, "Boolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -576,7 +615,7 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 		initEClass(unlimitedNaturalEClass, UnlimitedNatural.class, "UnlimitedNatural", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnumeration_Value(), this.getString(), null, "value", null, 1, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnumeration_Value(), this.getEnumerationElement(), null, "value", null, 1, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classEClass, smalluml.Class.class, "Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClass_IsAbstract(), ecorePackage.getEBoolean(), "isAbstract", "false", 1, 1, smalluml.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -585,11 +624,11 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 		initEReference(getClass_Parents(), this.getClass_(), null, "parents", null, 0, -1, smalluml.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_TypedValue(), this.getType(), null, "typedValue", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_TypedValue(), this.getType(), null, "typedValue", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMethod_ReturnTypedValue(), this.getType(), null, "returnTypedValue", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMethod_Parameters(), this.getAttribute(), null, "parameters", null, 0, -1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMethod_ReturnTypedValue(), this.getType(), null, "returnTypedValue", null, 1, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelation_Cardinality(), this.getCardinality(), null, "cardinality", null, 1, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -603,6 +642,10 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 		initEClass(packageEClass, smalluml.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackage_Class(), this.getClass_(), null, "class", null, 0, -1, smalluml.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPackage_Relation(), this.getRelation(), null, "relation", null, 0, -1, smalluml.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Types(), this.getType(), null, "types", null, 0, -1, smalluml.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(enumerationElementEClass, EnumerationElement.class, "EnumerationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnumerationElement_Value(), ecorePackage.getEString(), "value", null, 1, 1, EnumerationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
