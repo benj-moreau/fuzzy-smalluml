@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.alma.uml.smalluml.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.alma.uml.smalluml.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.alma.uml.smalluml,
+ SmallUML,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.alma.uml.smalluml.ide.contentassist.antlr,
+ org.alma.uml.smalluml.ide.contentassist.antlr.internal
+
