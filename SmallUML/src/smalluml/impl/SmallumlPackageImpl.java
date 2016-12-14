@@ -5,22 +5,21 @@ package smalluml.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import smalluml.Attribute;
 import smalluml.Cardinality;
+import smalluml.ConcreteType;
 import smalluml.Enumeration;
 import smalluml.EnumerationElement;
 import smalluml.Method;
 import smalluml.NamedElement;
-import smalluml.Real;
 import smalluml.Relation;
 import smalluml.SmallumlFactory;
 import smalluml.SmallumlPackage;
 import smalluml.Type;
-import smalluml.UnlimitedNatural;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,48 +34,21 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass typeEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass booleanEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass realEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass integerEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stringEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass unlimitedNaturalEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass enumerationEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,18 +62,21 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * @generated
 	 */
 	private EClass attributeEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass methodEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass relationEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,6 +97,13 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * @generated
 	 */
 	private EClass enumerationElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass concreteTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -216,51 +198,6 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBoolean() {
-		return booleanEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getReal() {
-		return realEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getInteger() {
-		return integerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getString() {
-		return stringEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getUnlimitedNatural() {
-		return unlimitedNaturalEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEnumeration() {
 		return enumerationEClass;
 	}
@@ -297,15 +234,6 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClass_Parents() {
-		return (EReference)classEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getClass_Attributes() {
 		return (EReference)classEClass.getEStructuralFeatures().get(1);
 	}
@@ -317,6 +245,15 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 */
 	public EReference getClass_Methods() {
 		return (EReference)classEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClass_Parents() {
+		return (EReference)classEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -351,8 +288,8 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethod_ReturnTypedValue() {
-		return (EReference)methodEClass.getEStructuralFeatures().get(1);
+	public EReference getMethod_Parameters() {
+		return (EReference)methodEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -360,8 +297,8 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getMethod_Parameters() {
-		return (EReference)methodEClass.getEStructuralFeatures().get(0);
+	public EReference getMethod_ReturnTypedValue() {
+		return (EReference)methodEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -486,6 +423,15 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getConcreteType() {
+		return concreteTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SmallumlFactory getSmallumlFactory() {
 		return (SmallumlFactory)getEFactoryInstance();
 	}
@@ -513,16 +459,6 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		typeEClass = createEClass(TYPE);
-
-		booleanEClass = createEClass(BOOLEAN);
-
-		realEClass = createEClass(REAL);
-
-		integerEClass = createEClass(INTEGER);
-
-		stringEClass = createEClass(STRING);
-
-		unlimitedNaturalEClass = createEClass(UNLIMITED_NATURAL);
 
 		enumerationEClass = createEClass(ENUMERATION);
 		createEReference(enumerationEClass, ENUMERATION__VALUE);
@@ -556,6 +492,8 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 
 		enumerationElementEClass = createEClass(ENUMERATION_ELEMENT);
 		createEAttribute(enumerationElementEClass, ENUMERATION_ELEMENT__VALUE);
+
+		concreteTypeEClass = createEClass(CONCRETE_TYPE);
 	}
 
 	/**
@@ -586,33 +524,19 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		booleanEClass.getESuperTypes().add(this.getType());
-		realEClass.getESuperTypes().add(this.getType());
-		integerEClass.getESuperTypes().add(this.getType());
-		stringEClass.getESuperTypes().add(this.getType());
-		unlimitedNaturalEClass.getESuperTypes().add(this.getType());
-		enumerationEClass.getESuperTypes().add(this.getNamedElement());
+		typeEClass.getESuperTypes().add(this.getNamedElement());
 		enumerationEClass.getESuperTypes().add(this.getType());
 		classEClass.getESuperTypes().add(this.getNamedElement());
 		attributeEClass.getESuperTypes().add(this.getNamedElement());
 		methodEClass.getESuperTypes().add(this.getNamedElement());
 		relationEClass.getESuperTypes().add(this.getNamedElement());
+		concreteTypeEClass.getESuperTypes().add(this.getType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(booleanEClass, smalluml.Boolean.class, "Boolean", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(realEClass, Real.class, "Real", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(integerEClass, smalluml.Integer.class, "Integer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(stringEClass, smalluml.String.class, "String", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(unlimitedNaturalEClass, UnlimitedNatural.class, "UnlimitedNatural", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(enumerationEClass, Enumeration.class, "Enumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnumeration_Value(), this.getEnumerationElement(), null, "value", null, 1, -1, Enumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -646,6 +570,8 @@ public class SmallumlPackageImpl extends EPackageImpl implements SmallumlPackage
 
 		initEClass(enumerationElementEClass, EnumerationElement.class, "EnumerationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumerationElement_Value(), ecorePackage.getEString(), "value", null, 1, 1, EnumerationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(concreteTypeEClass, ConcreteType.class, "ConcreteType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

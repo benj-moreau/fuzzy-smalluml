@@ -1,2 +1,6 @@
 # fuzzy-smalluml
-small uml project MDE Project
+
+MDE small uml project M2 ALMA.
+
+MOREAU Benjamin
+LUCAS Lenny

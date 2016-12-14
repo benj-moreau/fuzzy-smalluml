@@ -49,6 +49,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * @ordered
 	 */
 	protected smalluml.Class from;
+
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
 	 * <!-- begin-user-doc -->

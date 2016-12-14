@@ -2,19 +2,22 @@
  */
 package smalluml.impl;
 
-import java.lang.Boolean;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import smalluml.Attribute;
 import smalluml.Method;
 import smalluml.SmallumlPackage;
@@ -131,18 +134,6 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<smalluml.Class> getParents() {
-		if (parents == null) {
-			parents = new EObjectResolvingEList<smalluml.Class>(smalluml.Class.class, this, SmallumlPackage.CLASS__PARENTS);
-		}
-		return parents;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, SmallumlPackage.CLASS__ATTRIBUTES);
@@ -160,6 +151,18 @@ public class ClassImpl extends NamedElementImpl implements smalluml.Class {
 			methods = new EObjectContainmentEList<Method>(Method.class, this, SmallumlPackage.CLASS__METHODS);
 		}
 		return methods;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<smalluml.Class> getParents() {
+		if (parents == null) {
+			parents = new EObjectResolvingEList<smalluml.Class>(smalluml.Class.class, this, SmallumlPackage.CLASS__PARENTS);
+		}
+		return parents;
 	}
 
 	/**

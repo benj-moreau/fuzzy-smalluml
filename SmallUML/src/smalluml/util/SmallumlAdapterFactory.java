@@ -11,15 +11,14 @@ import org.eclipse.emf.ecore.EObject;
 
 import smalluml.Attribute;
 import smalluml.Cardinality;
+import smalluml.ConcreteType;
 import smalluml.Enumeration;
 import smalluml.EnumerationElement;
 import smalluml.Method;
 import smalluml.NamedElement;
-import smalluml.Real;
 import smalluml.Relation;
 import smalluml.SmallumlPackage;
 import smalluml.Type;
-import smalluml.UnlimitedNatural;
 
 /**
  * <!-- begin-user-doc -->
@@ -86,26 +85,6 @@ public class SmallumlAdapterFactory extends AdapterFactoryImpl {
 				return createTypeAdapter();
 			}
 			@Override
-			public Adapter caseBoolean(smalluml.Boolean object) {
-				return createBooleanAdapter();
-			}
-			@Override
-			public Adapter caseReal(Real object) {
-				return createRealAdapter();
-			}
-			@Override
-			public Adapter caseInteger(smalluml.Integer object) {
-				return createIntegerAdapter();
-			}
-			@Override
-			public Adapter caseString(smalluml.String object) {
-				return createStringAdapter();
-			}
-			@Override
-			public Adapter caseUnlimitedNatural(UnlimitedNatural object) {
-				return createUnlimitedNaturalAdapter();
-			}
-			@Override
 			public Adapter caseEnumeration(Enumeration object) {
 				return createEnumerationAdapter();
 			}
@@ -136,6 +115,10 @@ public class SmallumlAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEnumerationElement(EnumerationElement object) {
 				return createEnumerationElementAdapter();
+			}
+			@Override
+			public Adapter caseConcreteType(ConcreteType object) {
+				return createConcreteTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -182,76 +165,6 @@ public class SmallumlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link smalluml.Boolean <em>Boolean</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see smalluml.Boolean
-	 * @generated
-	 */
-	public Adapter createBooleanAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link smalluml.Real <em>Real</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see smalluml.Real
-	 * @generated
-	 */
-	public Adapter createRealAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link smalluml.Integer <em>Integer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see smalluml.Integer
-	 * @generated
-	 */
-	public Adapter createIntegerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link smalluml.String <em>String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see smalluml.String
-	 * @generated
-	 */
-	public Adapter createStringAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link smalluml.UnlimitedNatural <em>Unlimited Natural</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see smalluml.UnlimitedNatural
-	 * @generated
-	 */
-	public Adapter createUnlimitedNaturalAdapter() {
 		return null;
 	}
 
@@ -364,6 +277,20 @@ public class SmallumlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEnumerationElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link smalluml.ConcreteType <em>Concrete Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see smalluml.ConcreteType
+	 * @generated
+	 */
+	public Adapter createConcreteTypeAdapter() {
 		return null;
 	}
 

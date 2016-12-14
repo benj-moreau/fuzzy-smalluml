@@ -81,6 +81,18 @@ public class MethodImpl extends NamedElementImpl implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Attribute> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Attribute>(Attribute.class, this, SmallumlPackage.METHOD__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Type getReturnTypedValue() {
 		if (returnTypedValue != null && returnTypedValue.eIsProxy()) {
 			InternalEObject oldReturnTypedValue = (InternalEObject)returnTypedValue;
@@ -112,18 +124,6 @@ public class MethodImpl extends NamedElementImpl implements Method {
 		returnTypedValue = newReturnTypedValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmallumlPackage.METHOD__RETURN_TYPED_VALUE, oldReturnTypedValue, returnTypedValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Attribute> getParameters() {
-		if (parameters == null) {
-			parameters = new EObjectContainmentEList<Attribute>(Attribute.class, this, SmallumlPackage.METHOD__PARAMETERS);
-		}
-		return parameters;
 	}
 
 	/**

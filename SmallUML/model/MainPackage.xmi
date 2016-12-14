@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smalluml:Package
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:smalluml="http://www.univ-nantes.fr/smalluml"
+    xsi:schemaLocation="http://www.univ-nantes.fr/smalluml /SmallUML/model/smalluml.ecore">
+  <class name="Animal"
+      isAbstract="true">
+    <attributes
+        name="nom"
+        typedValue="//@types.0"/>
+    <methods
+        name="Crier"
+        returnTypedValue="//@types.0">
+      <parameters
+          name="voix"
+          typedValue="//@types.0"/>
+    </methods>
+    <methods
+        name="marcher"
+        returnTypedValue="//@types.2"/>
+  </class>
+  <class name="Chien"
+      parents="//@class.0">
+    <methods
+        name="ramenerBalle"
+        returnTypedValue="//@types.1"/>
+  </class>
+  <class name="Chat"
+      parents="//@class.0"/>
+  <class name="Personne">
+    <attributes
+        name="nom"
+        typedValue="//@types.0"/>
+    <methods
+        name="donnerAManger"
+        returnTypedValue="//@types.1">
+      <parameters
+          name="nourriture"
+          typedValue="//@types.0"/>
+    </methods>
+  </class>
+  <relation
+      name="Proprietaire"
+      from="//@class.3"
+      to="//@class.0">
+    <cardinality
+        upperBound="1"/>
+  </relation>
+  <types xsi:type="smalluml:ConcreteType"
+      name="String"/>
+  <types xsi:type="smalluml:ConcreteType"
+      name="Boolean"/>
+  <types xsi:type="smalluml:ConcreteType"
+      name="Void"/>
+  <types xsi:type="smalluml:Enumeration"
+      name="Etat">
+    <value value="Vivant"/>
+    <value value="Mort"/>
+  </types>
+</smalluml:Package>

@@ -12,14 +12,13 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import smalluml.Attribute;
 import smalluml.Cardinality;
+import smalluml.ConcreteType;
 import smalluml.Enumeration;
 import smalluml.EnumerationElement;
 import smalluml.Method;
-import smalluml.Real;
 import smalluml.Relation;
 import smalluml.SmallumlFactory;
 import smalluml.SmallumlPackage;
-import smalluml.UnlimitedNatural;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,11 +64,6 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case SmallumlPackage.BOOLEAN: return createBoolean();
-			case SmallumlPackage.REAL: return createReal();
-			case SmallumlPackage.INTEGER: return createInteger();
-			case SmallumlPackage.STRING: return createString();
-			case SmallumlPackage.UNLIMITED_NATURAL: return createUnlimitedNatural();
 			case SmallumlPackage.ENUMERATION: return createEnumeration();
 			case SmallumlPackage.CLASS: return createClass();
 			case SmallumlPackage.ATTRIBUTE: return createAttribute();
@@ -78,59 +72,10 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 			case SmallumlPackage.CARDINALITY: return createCardinality();
 			case SmallumlPackage.PACKAGE: return createPackage();
 			case SmallumlPackage.ENUMERATION_ELEMENT: return createEnumerationElement();
+			case SmallumlPackage.CONCRETE_TYPE: return createConcreteType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public smalluml.Boolean createBoolean() {
-		BooleanImpl boolean_ = new BooleanImpl();
-		return boolean_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Real createReal() {
-		RealImpl real = new RealImpl();
-		return real;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public smalluml.Integer createInteger() {
-		IntegerImpl integer = new IntegerImpl();
-		return integer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public smalluml.String createString() {
-		StringImpl string = new StringImpl();
-		return string;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public UnlimitedNatural createUnlimitedNatural() {
-		UnlimitedNaturalImpl unlimitedNatural = new UnlimitedNaturalImpl();
-		return unlimitedNatural;
 	}
 
 	/**
@@ -211,6 +156,16 @@ public class SmallumlFactoryImpl extends EFactoryImpl implements SmallumlFactory
 	public EnumerationElement createEnumerationElement() {
 		EnumerationElementImpl enumerationElement = new EnumerationElementImpl();
 		return enumerationElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConcreteType createConcreteType() {
+		ConcreteTypeImpl concreteType = new ConcreteTypeImpl();
+		return concreteType;
 	}
 
 	/**

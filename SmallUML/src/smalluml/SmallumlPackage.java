@@ -105,13 +105,22 @@ public interface SmallumlPackage extends EPackage {
 	int TYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_FEATURE_COUNT = 0;
+	int TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Type</em>' class.
@@ -120,147 +129,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link smalluml.impl.BooleanImpl <em>Boolean</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see smalluml.impl.BooleanImpl
-	 * @see smalluml.impl.SmallumlPackageImpl#getBoolean()
-	 * @generated
-	 */
-	int BOOLEAN = 2;
-
-	/**
-	 * The number of structural features of the '<em>Boolean</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Boolean</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link smalluml.impl.RealImpl <em>Real</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see smalluml.impl.RealImpl
-	 * @see smalluml.impl.SmallumlPackageImpl#getReal()
-	 * @generated
-	 */
-	int REAL = 3;
-
-	/**
-	 * The number of structural features of the '<em>Real</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REAL_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Real</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REAL_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link smalluml.impl.IntegerImpl <em>Integer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see smalluml.impl.IntegerImpl
-	 * @see smalluml.impl.SmallumlPackageImpl#getInteger()
-	 * @generated
-	 */
-	int INTEGER = 4;
-
-	/**
-	 * The number of structural features of the '<em>Integer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Integer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link smalluml.impl.StringImpl <em>String</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see smalluml.impl.StringImpl
-	 * @see smalluml.impl.SmallumlPackageImpl#getString()
-	 * @generated
-	 */
-	int STRING = 5;
-
-	/**
-	 * The number of structural features of the '<em>String</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>String</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link smalluml.impl.UnlimitedNaturalImpl <em>Unlimited Natural</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see smalluml.impl.UnlimitedNaturalImpl
-	 * @see smalluml.impl.SmallumlPackageImpl#getUnlimitedNatural()
-	 * @generated
-	 */
-	int UNLIMITED_NATURAL = 6;
-
-	/**
-	 * The number of structural features of the '<em>Unlimited Natural</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNLIMITED_NATURAL_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Unlimited Natural</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNLIMITED_NATURAL_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
+	int TYPE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link smalluml.impl.EnumerationImpl <em>Enumeration</em>}' class.
@@ -270,7 +139,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getEnumeration()
 	 * @generated
 	 */
-	int ENUMERATION = 7;
+	int ENUMERATION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -279,7 +148,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__NAME = NAMED_ELEMENT__NAME;
+	int ENUMERATION__NAME = TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -288,7 +157,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION__VALUE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ENUMERATION__VALUE = TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Enumeration</em>' class.
@@ -297,7 +166,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ENUMERATION_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Enumeration</em>' class.
@@ -306,7 +175,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENUMERATION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int ENUMERATION_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link smalluml.impl.ClassImpl <em>Class</em>}' class.
@@ -316,7 +185,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 8;
+	int CLASS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -390,7 +259,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 9;
+	int ATTRIBUTE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -436,7 +305,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getMethod()
 	 * @generated
 	 */
-	int METHOD = 10;
+	int METHOD = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -491,7 +360,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getRelation()
 	 * @generated
 	 */
-	int RELATION = 11;
+	int RELATION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -555,7 +424,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 12;
+	int CARDINALITY = 7;
 
 	/**
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -602,7 +471,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getPackage()
 	 * @generated
 	 */
-	int PACKAGE = 13;
+	int PACKAGE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' containment reference list.
@@ -658,7 +527,7 @@ public interface SmallumlPackage extends EPackage {
 	 * @see smalluml.impl.SmallumlPackageImpl#getEnumerationElement()
 	 * @generated
 	 */
-	int ENUMERATION_ELEMENT = 14;
+	int ENUMERATION_ELEMENT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -686,6 +555,44 @@ public interface SmallumlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENUMERATION_ELEMENT_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link smalluml.impl.ConcreteTypeImpl <em>Concrete Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see smalluml.impl.ConcreteTypeImpl
+	 * @see smalluml.impl.SmallumlPackageImpl#getConcreteType()
+	 * @generated
+	 */
+	int CONCRETE_TYPE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_TYPE__NAME = TYPE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Concrete Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Concrete Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCRETE_TYPE_OPERATION_COUNT = TYPE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -718,56 +625,6 @@ public interface SmallumlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getType();
-
-	/**
-	 * Returns the meta object for class '{@link smalluml.Boolean <em>Boolean</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Boolean</em>'.
-	 * @see smalluml.Boolean
-	 * @generated
-	 */
-	EClass getBoolean();
-
-	/**
-	 * Returns the meta object for class '{@link smalluml.Real <em>Real</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Real</em>'.
-	 * @see smalluml.Real
-	 * @generated
-	 */
-	EClass getReal();
-
-	/**
-	 * Returns the meta object for class '{@link smalluml.Integer <em>Integer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Integer</em>'.
-	 * @see smalluml.Integer
-	 * @generated
-	 */
-	EClass getInteger();
-
-	/**
-	 * Returns the meta object for class '{@link smalluml.String <em>String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String</em>'.
-	 * @see smalluml.String
-	 * @generated
-	 */
-	EClass getString();
-
-	/**
-	 * Returns the meta object for class '{@link smalluml.UnlimitedNatural <em>Unlimited Natural</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unlimited Natural</em>'.
-	 * @see smalluml.UnlimitedNatural
-	 * @generated
-	 */
-	EClass getUnlimitedNatural();
 
 	/**
 	 * Returns the meta object for class '{@link smalluml.Enumeration <em>Enumeration</em>}'.
@@ -1037,6 +894,16 @@ public interface SmallumlPackage extends EPackage {
 	EAttribute getEnumerationElement_Value();
 
 	/**
+	 * Returns the meta object for class '{@link smalluml.ConcreteType <em>Concrete Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Concrete Type</em>'.
+	 * @see smalluml.ConcreteType
+	 * @generated
+	 */
+	EClass getConcreteType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1086,56 +953,6 @@ public interface SmallumlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TYPE = eINSTANCE.getType();
-
-		/**
-		 * The meta object literal for the '{@link smalluml.impl.BooleanImpl <em>Boolean</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see smalluml.impl.BooleanImpl
-		 * @see smalluml.impl.SmallumlPackageImpl#getBoolean()
-		 * @generated
-		 */
-		EClass BOOLEAN = eINSTANCE.getBoolean();
-
-		/**
-		 * The meta object literal for the '{@link smalluml.impl.RealImpl <em>Real</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see smalluml.impl.RealImpl
-		 * @see smalluml.impl.SmallumlPackageImpl#getReal()
-		 * @generated
-		 */
-		EClass REAL = eINSTANCE.getReal();
-
-		/**
-		 * The meta object literal for the '{@link smalluml.impl.IntegerImpl <em>Integer</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see smalluml.impl.IntegerImpl
-		 * @see smalluml.impl.SmallumlPackageImpl#getInteger()
-		 * @generated
-		 */
-		EClass INTEGER = eINSTANCE.getInteger();
-
-		/**
-		 * The meta object literal for the '{@link smalluml.impl.StringImpl <em>String</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see smalluml.impl.StringImpl
-		 * @see smalluml.impl.SmallumlPackageImpl#getString()
-		 * @generated
-		 */
-		EClass STRING = eINSTANCE.getString();
-
-		/**
-		 * The meta object literal for the '{@link smalluml.impl.UnlimitedNaturalImpl <em>Unlimited Natural</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see smalluml.impl.UnlimitedNaturalImpl
-		 * @see smalluml.impl.SmallumlPackageImpl#getUnlimitedNatural()
-		 * @generated
-		 */
-		EClass UNLIMITED_NATURAL = eINSTANCE.getUnlimitedNatural();
 
 		/**
 		 * The meta object literal for the '{@link smalluml.impl.EnumerationImpl <em>Enumeration</em>}' class.
@@ -1352,6 +1169,16 @@ public interface SmallumlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENUMERATION_ELEMENT__VALUE = eINSTANCE.getEnumerationElement_Value();
+
+		/**
+		 * The meta object literal for the '{@link smalluml.impl.ConcreteTypeImpl <em>Concrete Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see smalluml.impl.ConcreteTypeImpl
+		 * @see smalluml.impl.SmallumlPackageImpl#getConcreteType()
+		 * @generated
+		 */
+		EClass CONCRETE_TYPE = eINSTANCE.getConcreteType();
 
 	}
 

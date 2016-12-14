@@ -22,51 +22,6 @@ public interface SmallumlFactory extends EFactory {
 	SmallumlFactory eINSTANCE = smalluml.impl.SmallumlFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Boolean</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Boolean</em>'.
-	 * @generated
-	 */
-	Boolean createBoolean();
-
-	/**
-	 * Returns a new object of class '<em>Real</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Real</em>'.
-	 * @generated
-	 */
-	Real createReal();
-
-	/**
-	 * Returns a new object of class '<em>Integer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Integer</em>'.
-	 * @generated
-	 */
-	Integer createInteger();
-
-	/**
-	 * Returns a new object of class '<em>String</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String</em>'.
-	 * @generated
-	 */
-	String createString();
-
-	/**
-	 * Returns a new object of class '<em>Unlimited Natural</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unlimited Natural</em>'.
-	 * @generated
-	 */
-	UnlimitedNatural createUnlimitedNatural();
-
-	/**
 	 * Returns a new object of class '<em>Enumeration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +92,15 @@ public interface SmallumlFactory extends EFactory {
 	 * @generated
 	 */
 	EnumerationElement createEnumerationElement();
+
+	/**
+	 * Returns a new object of class '<em>Concrete Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Concrete Type</em>'.
+	 * @generated
+	 */
+	ConcreteType createConcreteType();
 
 	/**
 	 * Returns the package supported by this factory.

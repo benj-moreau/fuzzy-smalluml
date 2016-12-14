@@ -4,41 +4,36 @@
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Boolean" eSuperTypes="/SmallUML/model/smalluml.ecore#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Real" eSuperTypes="/SmallUML/model/smalluml.ecore#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Integer" eSuperTypes="/SmallUML/model/smalluml.ecore#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="String" eSuperTypes="/SmallUML/model/smalluml.ecore#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UnlimitedNatural" eSuperTypes="/SmallUML/model/smalluml.ecore#//Type"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="/SmallUML/model/smalluml.ecore#//NamedElement /SmallUML/model/smalluml.ecore#//Type">
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="#//Type">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" upperBound="-1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//EnumerationElement" containment="true"/>
+        eType="#//EnumerationElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="/SmallUML/model/smalluml.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Attribute" containment="true"/>
+        eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Method" containment="true"/>
+        eType="#//Method" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parents" upperBound="-1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Class"/>
+        eType="#//Class"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="/SmallUML/model/smalluml.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="typedValue" lowerBound="1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Type"/>
+        eType="#//Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Method" eSuperTypes="/SmallUML/model/smalluml.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Method" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Attribute" containment="true"/>
+        eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnTypedValue" lowerBound="1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Type"/>
+        eType="#//Type"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="/SmallUML/model/smalluml.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Cardinality" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Class"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Class"/>
+        eType="#//Cardinality" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//Class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Cardinality">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
@@ -48,13 +43,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Package">
     <eStructuralFeatures xsi:type="ecore:EReference" name="class" upperBound="-1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Class" containment="true"/>
+        eType="#//Class" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" upperBound="-1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Relation" containment="true"/>
+        eType="#//Relation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
-        eType="ecore:EClass /SmallUML/model/smalluml.ecore#//Type" containment="true"/>
+        eType="#//Type" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EnumerationElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConcreteType" eSuperTypes="#//Type"/>
 </ecore:EPackage>

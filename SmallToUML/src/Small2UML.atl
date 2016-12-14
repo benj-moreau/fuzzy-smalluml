@@ -95,37 +95,9 @@ rule SmallEnumeration2Enumeration {
 	)
 }
 
-rule TypeString2PrimitiveType {
-	from s : small!"String"
+rule ConcreteType2PrimitiveType {
+	from s : small!ConcreteType
 	to t : uml!PrimitiveType (
-		name <- 'String'
-	)
-}
-
-rule TypeInt2PrimitiveType {
-	from s : small!"Integer"
-	to t : uml!PrimitiveType (
-		name <- 'Integer'	
-	)
-}
-
-rule TypeUnlimitedNatural2PrimitiveType {
-	from s : small!"UnlimitedNatural"
-	to t : uml!PrimitiveType (
-		name <- 'UnlimitedNatural'	
-	)
-}
-
-rule TypeReal2PrimitiveType {
-	from s : small!"Real"
-	to t : uml!PrimitiveType (
-		name <- 'Real'	
-	)
-}
-
-rule TypeBoolean2PrimitiveType {
-	from s : small!"Boolean"
-	to t : uml!PrimitiveType (
-		name <- 'Boolean'	
+		name <- s.name
 	)
 }

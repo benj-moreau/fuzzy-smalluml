@@ -4,8 +4,6 @@ package smalluml.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import smalluml.SmallumlPackage;
 import smalluml.Type;
 
@@ -16,7 +14,7 @@ import smalluml.Type;
  *
  * @generated
  */
-public abstract class TypeImpl extends MinimalEObjectImpl.Container implements Type {
+public abstract class TypeImpl extends NamedElementImpl implements Type {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

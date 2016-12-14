@@ -1,0 +1,43 @@
+Abstract Class Animal {
+	attributes {
+		nom: String ;
+	}
+	methods {
+		crier (voix : String;):String;
+		marcher ():Void ;
+	}
+};
+
+Class Chien extends Animal {
+	methods {
+		ramenerBalle ():Boolean ;
+	}
+	
+};
+
+Class Chat extends Animal {};
+
+Class Personne {
+	attributes {
+		nom: String ;
+	}
+	methods {
+		donnerAManger (nourriture: String;):Boolean ;
+	}
+};
+
+Relation proprietaire {
+	from Personne
+	to Animal
+	cardinality [0,1]
+	
+};
+
+Enumeration Etat {
+	Mort, 
+	Vivant
+};
+ConcreteType String;
+ConcreteType Boolean;
+ConcreteType Void;
+

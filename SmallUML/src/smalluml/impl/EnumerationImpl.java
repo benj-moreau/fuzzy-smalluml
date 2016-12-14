@@ -31,7 +31,7 @@ import smalluml.SmallumlPackage;
  *
  * @generated
  */
-public class EnumerationImpl extends NamedElementImpl implements Enumeration {
+public class EnumerationImpl extends TypeImpl implements Enumeration {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
